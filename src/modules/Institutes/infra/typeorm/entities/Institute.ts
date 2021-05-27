@@ -1,10 +1,11 @@
 import { v4 as uuidV4 } from 'uuid';
-import { Column,  Entity, PrimaryColumn } from 'typeorm';
+import { Column,  Entity, JoinColumn, OneToMany, PrimaryColumn, PrimaryGeneratedColumn } from 'typeorm';
+import { Course } from '../../../../course/infra/typeorm/entities/course';
 
 @Entity("institute")
 class Institute {
 
-    @PrimaryColumn()
+    @PrimaryGeneratedColumn()
     id: string;
 
     @Column()
@@ -12,6 +13,10 @@ class Institute {
 
     @Column()
     campus: string;
+
+    @OneToMany(type => Course,  institute => Institute)
+    @JoinColumn()
+    course : Course;
 
     constructor() {
         if (!this.id){
