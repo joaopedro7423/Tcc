@@ -1,10 +1,31 @@
-import { CreateUserController } from "../../src/modules/accounts/useCases/createUser/CreateUserController";
 
-describe('notifications Test', () => {
-    test('should return 201', () => {
-       
-        const createUserController = new CreateUserController();
-      
-        expect(createUserController.handle).toBe(201)
+let createNotificationUseCase : CreateNotificationUseCase
+
+const mockNotification = {
+    title: "string",
+    description: "string",
+    user: "string"
+  };
+  
+
+
+describe('User Test', () => {
+    beforeEach(()=>{
+        createNotificationUseCase = new CreateNotificationUseCase(create(mockNotification))
+    })
+
+    it("Should be able to create a new Notification", async () => {
+        const user = await createNotificationUseCase.execute(mockNotification)
+        expect(user).toHaveProperty("id");
+      })
+
+    test('should return 201', async () => {
+       const user = await createNotificationUseCase.execute(mockNotification)
+       expect(user).toBe(true);
     });
+
+    
+
+
 });
+

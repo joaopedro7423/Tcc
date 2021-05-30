@@ -1,10 +1,31 @@
-import { CreateUserController } from "../../src/modules/accounts/useCases/createUser/CreateUserController";
+
+let createTenderUseCase : CreateTenderUseCase
+
+const mockTender = {
+    title: "string",
+    description: "string",
+    user: "string"
+  };
+  
+
 
 describe('Tender Test', () => {
-    test('should return 201', () => {
-       
-        const createUserController = new CreateUserController();
-      
-        expect(createUserController.handle).toBe(201)
+    beforeEach(()=>{
+        createTenderUseCase = new CreateTenderUseCase(create(mockTender))
+    })
+
+    it("Should be able to create a new Tender", async () => {
+        const tender = await createTenderUseCase.execute(mockTender)
+        expect(tender).toHaveProperty("id");
+      })
+
+    test('should return 201', async () => {
+       const tender = await createTenderUseCase.execute(mockTender)
+       expect(tender).toBe(true);
     });
+
+    
+
+
 });
+
