@@ -1,4 +1,4 @@
-import { CreateCourseUseCase } from "../../src/modules/course/useCases/createInstitute/CreateCourseUseCase";
+import { CreateCourseUseCase } from "../../modules/course/useCases/createInstitute/CreateCourseUseCase";
 
 let createCourseUseCase : CreateCourseUseCase
 
@@ -29,7 +29,7 @@ describe('Course Test', () => {
 
 });
 
-function create(mockCourse: { name: string; institute_id: string; }): import("../../src/modules/course/repositories/ICourseRepository").ICourseRepository {
+function create(mockCourse: { name: string; institute_id: string; }): import("../../modules/course/repositories/ICourseRepository").ICourseRepository {
     throw new Error("Function not implemented.");
 }
 

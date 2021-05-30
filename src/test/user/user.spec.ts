@@ -1,4 +1,4 @@
-import { CreateUserUseCase } from "../../src/modules/accounts/useCases/createUser/CreateUserUseCase";
+import { CreateUserUseCase } from "../../modules/accounts/useCases/createUser/CreateUserUseCase";
 
 
 let createUserUseCase : CreateUserUseCase
@@ -33,7 +33,7 @@ describe('User Test', () => {
 });
 
 
-function create(mockUser: { name: string; password: string; email: string; role: string; }): import("../../src/modules/accounts/repositories/IUsersRepository").IUsersRepository {
+function create(mockUser: { name: string; password: string; email: string; role: string; }): import("../../modules/accounts/repositories/IUsersRepository").IUsersRepository {
     throw new Error("Function not implemented.");
 }
 

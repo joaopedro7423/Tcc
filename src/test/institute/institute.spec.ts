@@ -1,4 +1,4 @@
-import { CreateInstituteUseCase } from "../../src/modules/Institutes/useCases/createInstitute/CreateInstituteUseCase";
+import { CreateInstituteUseCase } from "../../modules/Institutes/useCases/createInstitute/CreateInstituteUseCase";
 
 let createInstituteUseCase : CreateInstituteUseCase
 
@@ -29,6 +29,6 @@ describe('Institute Test', () => {
 
 });
 
-function create(mockInstitute: { name: string; campus: string; }): import("../../src/modules/Institutes/repositories/IInstituteRepository").IInstituteRepository {
+function create(mockInstitute: { name: string; campus: string; }): import("../../modules/Institutes/repositories/IInstituteRepository").IInstituteRepository {
     throw new Error("Function not implemented.");
 }
