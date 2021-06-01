@@ -5,6 +5,7 @@
     "username": "postgres",
     "password": "Acqddsdl7423",
     "database": "db_tcc",
+    "synchtonize":true,
     "migrations": ["./src/database/migrations/*.ts"],
     "entities": ["./src/modules/**/entities/*.ts"],
     "cli": {
